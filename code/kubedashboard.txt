@@ -1,5 +1,10 @@
+
 1 - kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.5/aio/deploy/recommended.yaml
-2 - kubectl apply -f eks-admin-service-account.yaml
+
+2 - kubectl apply -f https://raw.githubusercontent.com/coursera-guided/aws-eks-templates/main/eks-admin-service-account.yaml
+
 3 - kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep eks-admin | awk '{print $1}')
-	kubectl proxy   
-	To access the dashboard endpoint, open the following link with a web browser: http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#!/login.
+	
+4 - kubectl proxy   
+	
+5 - http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#!/login
